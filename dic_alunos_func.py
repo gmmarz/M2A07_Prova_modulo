@@ -9,7 +9,7 @@ def adicionar_alunos(dic_alunos:dict)-> dict:
             if aluno_id in dic_alunos:
                 print('Matricula digitada já existe, tente novamente com outra matrícula')
             else:
-                aluno_nome = input('Digite o nome do aluno: ')
+                aluno_nome = input('Digite o nome do aluno: ').capitalize()
                 dic_alunos.update({aluno_id:aluno_nome}) 
         except ValueError:
             print('Para Matricula digitar apenas número inteiro')
@@ -40,7 +40,7 @@ def remover_alunos(dic_alunos:dict)-> dict:
         if not continuar_operacao():
             return dic_alunos
         
-def atualizar_aluno(dic_alunos:dict)->dict:
+def atualizar_alunos(dic_alunos:dict)->dict:
 
     while True:
         print('Atualizar cadastro aluno:')
@@ -54,7 +54,7 @@ def atualizar_aluno(dic_alunos:dict)->dict:
             if aluno_id not in dic_alunos:
                 print('Matricula digitada não existe. Não é possível alterar')
             else:
-                novo_nome = input('Digite o novo nome do aluno:')
+                novo_nome = input('Digite o novo nome do aluno:').capitalize()
                 print(f'O aluno de matricula {aluno_id}, nome: {dic_alunos[aluno_id]}')
                 dic_alunos[aluno_id] = novo_nome
                 print('foi alterado para:')
@@ -65,8 +65,14 @@ def atualizar_aluno(dic_alunos:dict)->dict:
             return dic_alunos
         
 def listar_alunos(dic_alunos:dict):
-    print('Alunos cadastrados')
+    print('\nLista de Alunos cadastrados')
     print('-'*30)
     
-    for id,nome in dic_alunos.items():
-        print(f'Matricula: {id} - nome: {nome}')
+    if len(dic_alunos) == 0:
+        print('Nenhum aluno cadastrado')
+    else:
+        for id,nome in dic_alunos.items():
+            print(f'Matricula: {id} - nome: {nome}')
+
+if __name__ == '__main__':
+    print('Este arquivo é um módulo e não deve ser executado diretamente')

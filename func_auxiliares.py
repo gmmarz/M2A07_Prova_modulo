@@ -8,3 +8,6 @@ def continuar_operacao()-> bool:
                 return False
             case _:
                 print('Digite apenas "s" para sim ou "n" para não')
+
+if __name__ == '__main__':
+    print('Este arquivo é um módulo e não deve ser executado diretamente')
