@@ -64,7 +64,7 @@ def atualizar_alunos(dic_alunos:dict)->dict:
         if not continuar_operacao():
             return dic_alunos
         
-def listar_alunos(dic_alunos:dict):
+def ver_alunos(dic_alunos:dict):
     print('\nLista de Alunos cadastrados')
     print('-'*30)
     

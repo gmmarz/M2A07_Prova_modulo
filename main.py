@@ -1,4 +1,5 @@
-from dic_alunos_func import adicionar_alunos,remover_alunos,atualizar_alunos, listar_alunos
+#Aluno: Guilherme Marzano
+from dic_alunos_func import adicionar_alunos,remover_alunos,atualizar_alunos, ver_alunos
 
 def init():
 
@@ -10,7 +11,7 @@ def init():
         print('Digite:\n(1) Adicionar Alunos\
             \n(2) Remover Alunos\
             \n(3) Atualizar Alunos\
-            \n(4) listar Alunos\
+            \n(4) ver Lista de Alunos\
             \n(0) Finalizar programa')
         try:
             flg_op = int(input('Digite sua opção: '))
@@ -22,7 +23,7 @@ def init():
                 case 3:
                     dic_alunos = atualizar_alunos(dic_alunos)
                 case 4:
-                    listar_alunos(dic_alunos)
+                    ver_alunos(dic_alunos)
                 case 0:
                     print('Programa de cadastro finalizado')
                     print('-'*30)
